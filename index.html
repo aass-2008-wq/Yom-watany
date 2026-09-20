@@ -10,6 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .student-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+    .student-page{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.08);border:1px solid rgba(0,108,53,.12)}
+    .student-page img{width:100%;display:block;background:#f5f2ea;aspect-ratio:2/3;object-fit:contain}
+    .student-page .student-cap{padding:16px 18px 18px}
+    .student-page h3{margin:0 0 6px;color:#006c35}
+    .student-page p{margin:0;color:#5e675f;line-height:1.9}
+    .student-roster{margin-top:24px;background:#fff;border-radius:18px;padding:20px;border:1px solid rgba(0,108,53,.12);line-height:2}
+    .student-roster strong{color:#006c35}
+    @media(max-width:900px){.student-gallery{grid-template-columns:1fr}.student-page img{aspect-ratio:auto}}
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -22,7 +33,7 @@
         <a href="#story">قصة وطن</a>
         <a href="#then-now">الأمس واليوم</a>
         <a href="#values">عزنا بطبعنا</a>
-        <a href="#school">مشاركة المدرسة</a>
+        <a href="#students">أعمال الطلاب</a>
         <a href="#quiz">المسابقة</a>
         <a href="#sources">المصادر</a>
       </nav>
@@ -37,7 +48,7 @@
           <h1>مجلة<br>وطن</h1>
           <div class="subtitle">اليوم الوطني السعودي 2026</div>
           <div class="slogan">عزنا بطبعنا</div>
-          <p>مجلة مدرسية إلكترونية تحكي قصة المملكة، وتجمع بين التاريخ والتراث وصور الوطن قديمًا وحديثًا، وتفتح مساحة مشاركة لجميع طلاب المدرسة ومنسوبيها.</p>
+          <p>مجلة مدرسية إلكترونية تحكي قصة المملكة، وتجمع بين التاريخ والتراث وصور الوطن قديمًا وحديثًا، وتحتفي بمشاركات طلاب مدرسة الإمام الشوكاني الابتدائية بالمذنب.</p>
           <div class="cover-actions">
             <a class="btn btn-light" href="#story">ابدأ التصفح</a>
             <a class="btn btn-ghost" href="#quiz">اختبر معلوماتك</a>
@@ -46,7 +57,7 @@
         <aside class="school-badge">
           <img src="assets/school-logo.svg" alt="شعار المدرسة">
           <strong>مدرسة الإمام الشوكاني الابتدائية بالمذنب</strong>
-          <span>مجلة إلكترونية على مستوى المدرسة</span>
+          <span>إصدار وطني من مدرسة الإمام الشوكاني الابتدائية بالمذنب</span>
         </aside>
       </div>
     </section>
@@ -63,7 +74,7 @@
         <div class="mag-grid">
           <article class="paper">
             <p class="dropcap">من الرياض بدأت مرحلة مهمة من مسيرة توحيد المملكة، ثم توالت خطوات التوحيد حتى صدر الأمر الملكي بإعلان اسم المملكة العربية السعودية، ليصبح 23 سبتمبر يومًا وطنيًا نستحضر فيه التاريخ ونقرأ التحولات التي عاشها الوطن عبر الأجيال.</p>
-            <div class="quote">هذا الموقع ليس صفحة معلومات فقط؛ بل مجلة وطنية مدرسية قابلة للتوسع بمشاركات الطلاب، الصور، المسابقات، والمقالات.</div>
+            <div class="quote">وطن عريق، وحاضر مزدهر، وأجيال تعتز بتاريخ المملكة وهويتها وإنجازاتها.</div>
           </article>
           <div class="paper timeline">
             <div class="time-item">
@@ -90,7 +101,7 @@
             <div class="eyebrow" style="color:#bce8cd">عدسة المجلة</div>
             <h2>السعودية بين الأمس واليوم</h2>
           </div>
-          <p class="lead" style="color:#d6eee1">صورتان تفتحان باب الحوار المدرسي: ماذا تغيّر؟ وما الذي بقي حاضرًا في الهوية والمكان؟</p>
+          <p class="lead" style="color:#d6eee1">مشاهد من الماضي والحاضر توثّق تطور المكان مع بقاء الهوية السعودية حاضرة.</p>
         </div>
         <div class="compare-grid">
           <article class="photo-card">
@@ -138,9 +149,9 @@
         <div class="section-head">
           <div>
             <div class="eyebrow">كنوز الوطن</div>
-            <h2>تاريخ أقدم من صفحات المجلة</h2>
+            <h2>من تاريخ وطننا</h2>
           </div>
-          <p class="lead">تضم المملكة مواقع ومعالم تحفظ طبقات متعددة من التاريخ والثقافة والتراث.</p>
+          <p class="lead">تزخر المملكة بمواقع ومعالم تحفظ صفحات من التاريخ والثقافة والتراث.</p>
         </div>
         <div class="heritage-grid">
           <div class="heritage-image">
@@ -160,25 +171,31 @@
       </div>
     </section>
 
-    <section id="school" class="schoolwide">
+    <section id="students" class="schoolwide">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <div class="eyebrow">مشاركة جميع المدرسة</div>
-            <h2>كيف نجعل المجلة مشروعًا مدرسيًا كاملًا؟</h2>
+            <div class="eyebrow">إبداعات طلابنا</div>
+            <h2>معرض الأعمال الوطنية</h2>
           </div>
-          <p class="lead">الفكرة أن يكون الموقع منصة تجمع أعمال الصفوف المختلفة بدل أن يرتبط بفصل واحد.</p>
+          <p class="lead">مشاركات طلاب مدرسة الإمام الشوكاني الابتدائية بالمذنب بمناسبة اليوم الوطني السعودي 96.</p>
         </div>
-        <div class="ideas">
-          <div class="idea"><div class="n">1</div><h3>ذاكرة الوطن</h3><p>طلاب الصفوف العليا يجمعون صورًا قديمة وحديثة لمعالم المملكة ويكتبون تعليقات قصيرة موثقة.</p></div>
-          <div class="idea"><div class="n">2</div><h3>رسمة وطن</h3><p>الصفوف الأولية تشارك برسومات وتلوين للعلم والمعالم، ويُنشر أفضل الأعمال في معرض رقمي.</p></div>
-          <div class="idea"><div class="n">3</div><h3>مراسل المدرسة</h3><p>طلاب مختارون يغطون فعاليات اليوم الوطني داخل المدرسة بصور وتقارير قصيرة.</p></div>
-          <div class="idea"><div class="n">4</div><h3>دقيقة وطنية</h3><p>مقاطع صوتية قصيرة: طالب يقرأ معلومة تاريخية، أو معلم يشارك موقفًا أو قيمة وطنية.</p></div>
-          <div class="idea"><div class="n">5</div><h3>مسابقة المجلة</h3><p>أسئلة رقمية لكل المدرسة مع نتيجة فورية، ويمكن تخصيص نسخة مبسطة للصغار وأخرى للصفوف العليا.</p></div>
-          <div class="idea"><div class="n">6</div><h3>كلمة من منسوبي المدرسة</h3><p>قسم يضم كلمات قصيرة من الإدارة والمعلمين والطلاب عن الوطن والانتماء والعمل والإتقان.</p></div>
-          <div class="idea"><div class="n">7</div><h3>وطن بعدسة طلابنا</h3><p>عرض صور يلتقطها الطلاب لمعالم القصيم أو رحلاتهم داخل المملكة مع وصف المكان.</p></div>
-          <div class="idea"><div class="n">8</div><h3>معلومة في بطاقة</h3><p>كل فصل يجهز بطاقة واحدة فقط بمعلومة موثوقة؛ فتتكون في النهاية موسوعة صغيرة من إنتاج المدرسة.</p></div>
-          <div class="idea"><div class="n">9</div><h3>ركن الإنجاز</h3><p>عرض مبادرات المدرسة وخدمة المجتمع والأنشطة الطلابية التي تعبّر عن المسؤولية والعمل الجماعي.</p></div>
+        <div class="student-gallery">
+          <article class="student-page">
+            <img id="student-collage-1" alt="المجموعة الأولى من أعمال الطلاب" loading="lazy">
+            <div class="student-cap"><h3>المجموعة الأولى</h3><p>تصاميم ورسومات ومشاركات وطنية متنوعة.</p></div>
+          </article>
+          <article class="student-page">
+            <img id="student-collage-2" alt="المجموعة الثانية من أعمال الطلاب" loading="lazy">
+            <div class="student-cap"><h3>المجموعة الثانية</h3><p>أعمال طلابية تعبّر عن الاعتزاز بالوطن وهويته.</p></div>
+          </article>
+          <article class="student-page">
+            <img id="student-collage-3" alt="المجموعة الثالثة من أعمال الطلاب" loading="lazy">
+            <div class="student-cap"><h3>المجموعة الثالثة</h3><p>مشاركات فنية احتفاءً باليوم الوطني السعودي 96.</p></div>
+          </article>
+        </div>
+        <div class="student-roster">
+          <strong>المشاركون:</strong> محمد العنزي، إياد الشمسان، عبدالله إبراهيم العقيلي، مهند المقبل، جابر محمد العتيق، عبدالـمجيد الشمسان، سليمان فهد الحواس، علي فهد المطيري، أحمد العريني، ماهر الشايع، أوس الدوسري، أحمد دسوقي، رواف الناصر، أمير الرشيد، عبدالله فهد المطيري، فهد جلال المطيري، حكيم القويفلي، أسر القليطي، بتال الشايع، صالح الطليحي، إبراهيم الحميدي، سعد الحماد، إضافة إلى مشاركات طلابية أخرى وردت ضمن الأعمال المرسلة.
         </div>
       </div>
     </section>
@@ -282,7 +299,7 @@
         <strong>مجلة وطن الإلكترونية</strong>
         <p>مدرسة الإمام الشوكاني الابتدائية بالمذنب</p>
         <p>إعداد وبرمجة الأستاذ مقرن المطيري</p>
-        <p class="tiny">مشروع مدرسي قابل للتحديث بإضافة مشاركات الطلاب وصور الفعاليات والمقالات الوطنية.</p>
+        <p class="tiny">اليوم الوطني السعودي 96 • سبتمبر 2026</p>
       </div>
       <img class="foot-logo" src="assets/school-logo.svg" alt="شعار المدرسة">
     </div>
@@ -290,6 +307,22 @@
 
   <button class="to-top" id="toTop" aria-label="العودة إلى أعلى">↑</button>
 
+  <script>
+    (async () => {
+      const groups = [
+        ['assets/gallery/c1a.txt','assets/gallery/c1b.txt','student-collage-1'],
+        ['assets/gallery/c2a.txt','assets/gallery/c2b.txt','student-collage-2'],
+        ['assets/gallery/c3a.txt','assets/gallery/c3b.txt','student-collage-3']
+      ];
+      for (const [partA, partB, id] of groups) {
+        try {
+          const [a,b] = await Promise.all([fetch(partA).then(r => r.text()), fetch(partB).then(r => r.text())]);
+          const img = document.getElementById(id);
+          if (img) img.src = 'data:image/jpeg;base64,' + a.trim() + b.trim();
+        } catch (_) {}
+      }
+    })();
+  </script>
   <script src="assets/script.js"></script>
 </body>
 </html>
