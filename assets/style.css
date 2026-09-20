@@ -143,3 +143,6 @@ footer p{margin:4px 0;color:#d8eee1}
 #students .student-cap{padding:14px 18px 18px!important}
 #students .student-page h3{font-size:1.2rem!important}
 @media(max-width:1100px){#students .student-gallery{max-width:96%!important}}
+
+/* توحيد حجم حروف افتتاحية قصة وطن */
+.dropcap:first-letter{float:none!important;font-size:inherit!important;line-height:inherit!important;padding:0!important;color:inherit!important;font-weight:inherit!important}
