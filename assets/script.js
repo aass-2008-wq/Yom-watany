@@ -3,9 +3,11 @@ const form = document.getElementById('quizForm');
 const scoreEl = document.getElementById('score');
 const resultEl = document.getElementById('result');
 
-form.addEventListener('submit', (e) => {
+form?.addEventListener('submit', (e) => {
   e.preventDefault();
-  let score = 0, answered = 0;
+  let score = 0;
+  let answered = 0;
+
   Object.entries(answers).forEach(([q, correct]) => {
     const chosen = form.querySelector(`input[name="${q}"]:checked`);
     if (chosen) {
@@ -13,19 +15,24 @@ form.addEventListener('submit', (e) => {
       if (chosen.value === correct) score++;
     }
   });
+
+  resultEl.style.display = 'block';
   if (answered < 6) {
-    resultEl.style.display = 'block';
-    resultEl.textContent = 'أكمل جميع الأسئلة أولًا.';
     scoreEl.textContent = '—';
+    resultEl.textContent = 'أكمل جميع الأسئلة أولا.';
     return;
   }
+
   scoreEl.textContent = score;
-  resultEl.style.display = 'block';
-  resultEl.textContent = score === 6 ? 'ممتاز! معلومات وطنية قوية.' : score >= 4 ? 'أحسنت! نتيجة جميلة، راجع سؤالين فقط.' : 'محاولة جيدة. تصفح المجلة ثم أعد الاختبار.';
+  resultEl.textContent = score === 6
+    ? 'ممتاز! إجاباتك كلها صحيحة.'
+    : score >= 4
+      ? 'أحسنت! نتيجة جميلة.'
+      : 'محاولة جيدة، يمكنك إعادة الاختبار.';
   resultEl.scrollIntoView({behavior:'smooth', block:'nearest'});
 });
 
-document.getElementById('resetQuiz').addEventListener('click', () => {
+document.getElementById('resetQuiz')?.addEventListener('click', () => {
   form.reset();
   scoreEl.textContent = '—';
   resultEl.style.display = 'none';
@@ -35,4 +42,4 @@ const toTop = document.getElementById('toTop');
 window.addEventListener('scroll', () => {
   toTop.style.display = window.scrollY > 650 ? 'block' : 'none';
 });
-toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+toTop?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
