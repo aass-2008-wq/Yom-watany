@@ -1,3 +1,14 @@
+/* عند فتح الموقع يبدأ دائما من أعلى الصفحة */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('pageshow', () => {
+  if (location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+  setTimeout(() => window.scrollTo(0, 0), 60);
+});
+
 const answers = {q1:'a', q2:'b', q3:'a', q4:'c', q5:'a', q6:'a'};
 const form = document.getElementById('quizForm');
 const scoreEl = document.getElementById('score');
@@ -43,8 +54,3 @@ window.addEventListener('scroll', () => {
   if (toTop) toTop.style.display = window.scrollY > 650 ? 'block' : 'none';
 });
 toTop?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-
-/* إخفاء أسماء الطلاب أسفل صور المعرض مع الإبقاء على الصور والتكبير كما هي */
-const studentNameStyle = document.createElement('style');
-studentNameStyle.textContent = '.student-cap{display:none!important}';
-document.head.appendChild(studentNameStyle);
