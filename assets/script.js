@@ -43,3 +43,8 @@ window.addEventListener('scroll', () => {
   if (toTop) toTop.style.display = window.scrollY > 650 ? 'block' : 'none';
 });
 toTop?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* إخفاء أسماء الطلاب أسفل صور المعرض مع الإبقاء على الصور والتكبير كما هي */
+const studentNameStyle = document.createElement('style');
+studentNameStyle.textContent = '.student-cap{display:none!important}';
+document.head.appendChild(studentNameStyle);
